@@ -1,16 +1,17 @@
 Summary:	ZX Spectrum emulator file format library
 Summary(pl):	Biblioteka do obs³ugi formatów plików emulatorów ZX Spectrum
 Name:		libspectrum
-Version:	0.1.1
-Release:	2
+Version:	0.2.1
+Release:	1
 License:	GPL
 Group:		Development/Libraries
-Source0:	http://www.srcf.ucam.org/~pak21/spectrum/%{name}-%{version}.tar.gz
-# Source0-md5:	48f59f6ae6683a16fa45d5510f8dca45
-URL:		http://www.srcf.ucam.org/~pak21/spectrum/libspectrum.html
+Source0:	http://dl.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
+# Source0-md5:	5b851262a7473cb71c3e3341e47e17de
+URL:		http://fuse-emulator.sourceforge.net/libspectrum.php
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib-devel
+BuildRequires:	libgcrypt-devel
 BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
