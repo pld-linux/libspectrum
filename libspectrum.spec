@@ -1,7 +1,7 @@
 Summary:	ZX Spectrum emulator file format library
 Summary(pl):	Biblioteka do obs³ugi formatów plików emulatorów ZX Spectrum
 Name:		libspectrum
-Version:	0.1.0
+Version:	0.1.1
 Release:	1
 License:	GPL
 Group:		Development/Libraries
@@ -10,6 +10,7 @@ URL:		http://www.srcf.ucam.org/~pak21/spectrum/libspectrum.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,7 +25,7 @@ na ró¿nych wariantach systemu Unix, Win32 i Mac OS X.
 
 %package devel
 Summary:	ZX Spectrum emulator file format library - development
-Summary(pl):	Czê¶æ dla programistów biblioteki libspectrum
+Summary(pl):	Czê¶æ dla programistów u¿ywaj±cych biblioteki libspectrum
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
@@ -54,6 +55,8 @@ Statyczna wersja biblioteki libspectrum.
 %build
 rm -f missing
 %{__aclocal}
+%{__libtoolize}
+%{__autoheader}
 %{__autoconf}
 %{__automake}
 %configure
@@ -62,7 +65,6 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-ln -sf libspectrum.so.0.0.0 $RPM_BUILD_ROOT%{_libdir}/libspectrum.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
