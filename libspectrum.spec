@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://www.srcf.ucam.org/~pak21/spectrum/%{name}-%{version}.tar.gz
+# Source0-md5:	48f59f6ae6683a16fa45d5510f8dca45
 URL:		http://www.srcf.ucam.org/~pak21/spectrum/libspectrum.html
 BuildRequires:	autoconf
 BuildRequires:	automake
