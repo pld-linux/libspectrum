@@ -30,7 +30,7 @@ na ró¿nych wariantach systemu Unix, Win32 i Mac OS X.
 Summary:	ZX Spectrum emulator file format library - development
 Summary(pl):	Czê¶æ dla programistów u¿ywaj±cych biblioteki libspectrum
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 The libspectrum-devel package contains the header files and documentation
@@ -44,7 +44,7 @@ do kompilowania aplikacji korzystaj±cych z libspectrum.
 Summary:	ZX Spectrum emulator file format static library
 Summary(pl):	Statyczna biblioteka libspectrum
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 The libspectrum-static package contains the static libraries of libspectrum.
@@ -56,11 +56,10 @@ Statyczna wersja biblioteki libspectrum.
 %setup -q
 
 %build
-rm -f missing
-%{__aclocal}
 %{__libtoolize}
-%{__autoheader}
+%{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
@@ -84,10 +83,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*
+%doc doc/libspectrum.txt
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/libspectrum.la
-%{_includedir}/*
+%{_includedir}/libspectrum.h
+%{_mandir}/man3/libspectrum.3*
 
 %files static
 %defattr(644,root,root,755)
