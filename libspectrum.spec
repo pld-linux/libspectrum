@@ -14,7 +14,7 @@ BuildRequires:	bzip2-devel >= 1.0
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libtool
-BuildRequires:	pkgconfig >= 0.7
+BuildRequires:	pkgconfig >= 1:0.7
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
