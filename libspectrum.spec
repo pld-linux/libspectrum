@@ -10,9 +10,11 @@ Source0:	http://dl.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
 URL:		http://fuse-emulator.sourceforge.net/libspectrum.php
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib-devel
+BuildRequires:	bzip2-devel >= 1.0
+BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libtool
+BuildRequires:	pkgconfig >= 0.7
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,6 +33,10 @@ Summary:	ZX Spectrum emulator file format library - development
 Summary(pl):	Czê¶æ dla programistów u¿ywaj±cych biblioteki libspectrum
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	bzip2-devel >= 1.0
+Requires:	glib2-devel >= 2.0.0
+Requires:	libgcrypt-devel
+Requires:	zlib-devel
 
 %description devel
 The libspectrum-devel package contains the header files and documentation
@@ -54,6 +60,9 @@ Statyczna wersja biblioteki libspectrum.
 
 %prep
 %setup -q
+
+# don't BR both glib versions
+echo 'AC_DEFUN([AM_PATH_GLIB],[$3])' >> acinclude.m4
 
 %build
 %{__libtoolize}
