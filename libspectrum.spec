@@ -11,6 +11,7 @@ URL:		http://www.srcf.ucam.org/~pak21/spectrum/libspectrum.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib-devel
+BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
