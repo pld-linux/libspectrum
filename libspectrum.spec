@@ -2,7 +2,7 @@ Summary:	ZX Spectrum emulator file format library
 Summary(pl):	Biblioteka do obs³ugi formatów plików emulatorów ZX Spectrum
 Name:		libspectrum
 Version:	0.1.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://www.srcf.ucam.org/~pak21/spectrum/%{name}-%{version}.tar.gz
