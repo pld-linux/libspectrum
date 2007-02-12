@@ -1,5 +1,5 @@
 Summary:	ZX Spectrum emulator file format library
-Summary(pl):	Biblioteka do obs³ugi formatów plików emulatorów ZX Spectrum
+Summary(pl.UTF-8):   Biblioteka do obsÅ‚ugi formatÃ³w plikÃ³w emulatorÃ³w ZX Spectrum
 Name:		libspectrum
 Version:	0.2.2
 Release:	1
@@ -23,14 +23,14 @@ libspectrum is a library designed to make the input and output of some
 ZX Spectrum emulator files slightly easier. It is intended to be
 usable on Unix variants, Win32 and Mac OS X.
 
-%description -l pl
-libspectrum jest bibliotek± zaprojektowan±, by u³atwiæ zapis i odczyt
-plików wykorzystywanych przez emulatory ZX Spectrum. Mo¿na jej u¿ywaæ
-na ró¿nych wariantach systemu Unix, Win32 i Mac OS X.
+%description -l pl.UTF-8
+libspectrum jest bibliotekÄ… zaprojektowanÄ…, by uÅ‚atwiÄ‡ zapis i odczyt
+plikÃ³w wykorzystywanych przez emulatory ZX Spectrum. MoÅ¼na jej uÅ¼ywaÄ‡
+na rÃ³Å¼nych wariantach systemu Unix, Win32 i Mac OS X.
 
 %package devel
 Summary:	ZX Spectrum emulator file format library - development
-Summary(pl):	Czê¶æ dla programistów u¿ywaj±cych biblioteki libspectrum
+Summary(pl.UTF-8):   CzÄ™Å›Ä‡ dla programistÃ³w uÅ¼ywajÄ…cych biblioteki libspectrum
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	bzip2-devel >= 1.0
@@ -42,20 +42,20 @@ Requires:	zlib-devel
 The libspectrum-devel package contains the header files and documentation
 needed to develop applications with libspectrum.
 
-%description devel -l pl
-Pakiet libspectrum-devel zawiera pliki nag³ówkowe i dokumentacjê potrzebne
-do kompilowania aplikacji korzystaj±cych z libspectrum.
+%description devel -l pl.UTF-8
+Pakiet libspectrum-devel zawiera pliki nagÅ‚Ã³wkowe i dokumentacjÄ™ potrzebne
+do kompilowania aplikacji korzystajÄ…cych z libspectrum.
 
 %package static
 Summary:	ZX Spectrum emulator file format static library
-Summary(pl):	Statyczna biblioteka libspectrum
+Summary(pl.UTF-8):   Statyczna biblioteka libspectrum
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 The libspectrum-static package contains the static libraries of libspectrum.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki libspectrum.
 
 %prep
