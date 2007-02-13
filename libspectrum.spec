@@ -1,5 +1,5 @@
 Summary:	ZX Spectrum emulator file format library
-Summary(pl.UTF-8):   Biblioteka do obsługi formatów plików emulatorów ZX Spectrum
+Summary(pl.UTF-8):	Biblioteka do obsługi formatów plików emulatorów ZX Spectrum
 Name:		libspectrum
 Version:	0.2.2
 Release:	1
@@ -30,7 +30,7 @@ na różnych wariantach systemu Unix, Win32 i Mac OS X.
 
 %package devel
 Summary:	ZX Spectrum emulator file format library - development
-Summary(pl.UTF-8):   Część dla programistów używających biblioteki libspectrum
+Summary(pl.UTF-8):	Część dla programistów używających biblioteki libspectrum
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	bzip2-devel >= 1.0
@@ -48,7 +48,7 @@ do kompilowania aplikacji korzystających z libspectrum.
 
 %package static
 Summary:	ZX Spectrum emulator file format static library
-Summary(pl.UTF-8):   Statyczna biblioteka libspectrum
+Summary(pl.UTF-8):	Statyczna biblioteka libspectrum
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
