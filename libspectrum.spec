@@ -1,3 +1,6 @@
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	ZX Spectrum emulator file format library
 Summary(pl.UTF-8):	Biblioteka do obsługi formatów plików emulatorów ZX Spectrum
 Name:		libspectrum
@@ -70,7 +73,8 @@ echo 'AC_DEFUN([AM_PATH_GLIB],[$3])' >> acinclude.m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -98,6 +102,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/libspectrum.h
 %{_mandir}/man3/libspectrum.3*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libspectrum.a
+%endif
