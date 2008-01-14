@@ -5,13 +5,14 @@
 Summary:	ZX Spectrum emulator file format library
 Summary(pl.UTF-8):	Biblioteka do obsługi formatów plików emulatorów ZX Spectrum
 Name:		libspectrum
-Version:	0.3.0.1
+Version:	0.4.0
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	0c3115064aa38cd0c6a5a5a286b38f79
+# Source0-md5:	53ac8a2fef9e5fc29060a8612f3c27af
 URL:		http://fuse-emulator.sourceforge.net/libspectrum.php
+BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel >= 1.0
@@ -37,6 +38,7 @@ Summary:	ZX Spectrum emulator file format library - development
 Summary(pl.UTF-8):	Część dla programistów używających biblioteki libspectrum
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	audiofile-devel >= 0.2.3
 Requires:	bzip2-devel >= 1.0
 Requires:	glib2-devel >= 2.0.0
 Requires:	libgcrypt-devel
@@ -94,11 +96,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README THANKS
 %attr(755,root,root) %{_libdir}/libspectrum.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libspectrum.so.5
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/libspectrum.txt
-%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/libspectrum.so
 %{_libdir}/libspectrum.la
 %{_includedir}/libspectrum.h
 %{_mandir}/man3/libspectrum.3*
