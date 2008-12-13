@@ -17,7 +17,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel >= 1.0
 BuildRequires:	glib2-devel >= 2.0.0
-BuildRequires:	libgcrypt-devel
+BuildRequires:	libgcrypt-devel >= 1.1.42
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.7
 BuildRequires:	zlib-devel
@@ -41,7 +41,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	audiofile-devel >= 0.2.3
 Requires:	bzip2-devel >= 1.0
 Requires:	glib2-devel >= 2.0.0
-Requires:	libgcrypt-devel
+Requires:	libgcrypt-devel >= 1.1.42
 Requires:	zlib-devel
 
 %description devel
