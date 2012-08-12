@@ -6,11 +6,12 @@ Summary:	ZX Spectrum emulator file format library
 Summary(pl.UTF-8):	Biblioteka do obsługi formatów plików emulatorów ZX Spectrum
 Name:		libspectrum
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://download.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
 # Source0-md5:	f969cbaaa33c8df41bc793479b1c88f2
+Patch0:		audiofile-0.3.patch
 URL:		http://fuse-emulator.sourceforge.net/libspectrum.php
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf
@@ -45,12 +46,12 @@ Requires:	libgcrypt-devel >= 1.1.42
 Requires:	zlib-devel
 
 %description devel
-The libspectrum-devel package contains the header files and documentation
-needed to develop applications with libspectrum.
+The libspectrum-devel package contains the header files and
+documentation needed to develop applications with libspectrum.
 
 %description devel -l pl.UTF-8
-Pakiet libspectrum-devel zawiera pliki nagłówkowe i dokumentację potrzebne
-do kompilowania aplikacji korzystających z libspectrum.
+Pakiet libspectrum-devel zawiera pliki nagłówkowe i dokumentację
+potrzebne do kompilowania aplikacji korzystających z libspectrum.
 
 %package static
 Summary:	ZX Spectrum emulator file format static library
@@ -59,13 +60,15 @@ Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-The libspectrum-static package contains the static libraries of libspectrum.
+The libspectrum-static package contains the static libraries of
+libspectrum.
 
 %description static -l pl.UTF-8
 Statyczna wersja biblioteki libspectrum.
 
 %prep
 %setup -q
+%patch0 -p1
 
 # don't BR both glib versions
 echo 'AC_DEFUN([AM_PATH_GLIB],[$3])' >> acinclude.m4
