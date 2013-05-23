@@ -13,12 +13,12 @@ Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.g
 # Source0-md5:	abe7ee1915d5e32749a8ded90dcd7df0
 URL:		http://fuse-emulator.sourceforge.net/libspectrum.php
 BuildRequires:	audiofile-devel >= 0.2.3
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	bzip2-devel >= 1.0
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel >= 1.1.42
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig >= 1:0.7
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
