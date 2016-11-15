@@ -73,7 +73,7 @@ echo 'AC_DEFUN([AM_PATH_GLIB],[$3])' >> acinclude.m4
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
