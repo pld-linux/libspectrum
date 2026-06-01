@@ -9,9 +9,9 @@ Version:	1.6.1
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
 # Source0-md5:	0c8ae2b8f48f1cacbd5c17466a663ee6
-URL:		http://fuse-emulator.sourceforge.net/libspectrum.php
+URL:		https://fuse-emulator.sourceforge.net/libspectrum.php
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
