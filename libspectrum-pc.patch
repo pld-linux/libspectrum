@@ -1,0 +1,8 @@
+--- libspectrum-1.6.2/libspectrum.pc.in.orig	2026-06-20 13:25:54.856741819 +0200
++++ libspectrum-1.6.2/libspectrum.pc.in	2026-06-20 13:26:08.523334447 +0200
+@@ -9,4 +9,4 @@ URL: https://fuse-emulator.sourceforge.n
+ Version: @PACKAGE_VERSION@
+ Cflags: -I${includedir}
+ Libs: -L${libdir} -lspectrum
+-Libs.private: @WAV_BACKEND_PRIVATE_LIBS@
++Libs.private: @WAV_BACKEND_PRIVATE_LIBS@ @GLIB_LIBS@ @LIBS@

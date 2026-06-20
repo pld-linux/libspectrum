@@ -11,6 +11,7 @@ License:	GPL v2+
 Group:		Libraries
 Source0:	https://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
 # Source0-md5:	0a7922641969cfdcbc88b436d519a069
+Patch0:		%{name}-pc.patch
 URL:		https://fuse-emulator.sourceforge.net/libspectrum.php
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
@@ -67,6 +68,7 @@ Statyczna wersja biblioteki libspectrum.
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 # don't BR both glib versions
 echo 'AC_DEFUN([AM_PATH_GLIB],[$3])' >> acinclude.m4
@@ -88,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libspectrum.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -104,7 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/libspectrum.txt
 %{_libdir}/libspectrum.so
-%{_libdir}/libspectrum.la
 %{_includedir}/libspectrum.h
 %{_mandir}/man3/libspectrum.3*
 %{_pkgconfigdir}/libspectrum.pc
