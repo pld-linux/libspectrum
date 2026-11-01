@@ -5,15 +5,14 @@
 Summary:	ZX Spectrum emulator file format library
 Summary(pl.UTF-8):	Biblioteka do obsługi formatów plików emulatorów ZX Spectrum
 Name:		libspectrum
-Version:	1.7.0
+Version:	1.8.0
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	https://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	452fcaf4ae562300c05dc70b5f9f5e7c
+# Source0-md5:	30b0eaf01ae654d1c0d320b1110b80df
 Patch0:		%{name}-pc.patch
 URL:		https://fuse-emulator.sourceforge.net/libspectrum.php
-BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	bzip2-devel >= 1.0
@@ -81,7 +80,8 @@ echo 'AC_DEFUN([AM_PATH_GLIB],[$3])' >> acinclude.m4
 %{__automake}
 %configure \
 	--disable-silent-rules \
-	%{!?with_static_libs:--disable-static}
+	%{!?with_static_libs:--disable-static} \
+	--with-wav-backend=pcm
 %{__make}
 
 %install
